@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Mateut_Andreea_Lab10.Models
 {
-    public class ShopList
+    public class Product
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Description { get; set; }
-        public DateTime Date { get; set; }
-
+        [OneToMany]
+        public List<ListProduct> ListProducts { get; set; }
     }
 }
